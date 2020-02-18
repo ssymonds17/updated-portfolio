@@ -1,0 +1,388 @@
+:root {
+ --primary-color: #004d4d;
+ --active-visited-color: #004d4d;
+ --background-color: #faf8f5;
+ --button-color: #357b70;
+ --yellow-sun: #edc655;
+ --red-sun: #f76414;
+ --work-hover: #fff;
+ --header-weight: 700;
+}
+
+* {
+ box-sizing: border-box;
+}
+
+body {
+ font-family: 'Source Sans Pro', sans-serif;
+ font-weight: 400;
+ font-size: 16px;
+ /* Sets the font size to 16px */
+ line-height: 1.6;
+ /* Sets the line-height to 1.6 */
+ background-color: var(--background-color);
+}
+
+h1 {
+ font-size: 60px;
+ font-weight: var(--header-weight);
+}
+
+h2 {
+ font-size: 24px;
+ font-weight: var(--header-weight);
+}
+
+h3 {
+ font-size: 18px;
+ font-weight: var(--header-weight);
+}
+
+a {
+ color: var(--primary-color);
+}
+
+a:visited {
+ /* Visited link */
+ color: var(--active-visited-color);
+}
+
+a:hover, a:focus {
+ /* No underlining when hovering over link */
+ text-decoration: none;
+}
+
+a:active {
+ /* Selected link */
+ color: var(--active-visited-color);
+}
+
+/* Top and Bottom borders go out */
+.navigation-list li {
+ position: relative;
+}
+
+.both-borders_out:before,
+.both-borders_out:after {
+ position: absolute;
+ width: 100%;
+ left: 0;
+ height: 2px;
+ background: #357b70;
+ content: "";
+ opacity: 0;
+ transition: all 0.3s;
+}
+
+.both-borders_out:before{
+ top: 0px;
+ transform: translateY(10px);
+}
+
+.both-borders_out:after {
+ bottom: 0px;
+ transform: translateY(-10px);
+}
+
+.both-borders_out:hover:before,
+.both-borders_out:hover:after {
+ opacity: 1;
+ transform: translateY(0px);
+}
+
+.sub-btn {
+ /* Overwrites browser defaults and resets the border */
+ border: none;
+ /* Takes the font from the outer container */
+ font-family: inherit;
+ /* Styles the background colour, font colour, and text decoration (underline etc.) of the button */
+ background-color: var(--button-color);
+ color: white;
+ text-decoration: none;
+ /* Adds spacing to the button */
+ padding: 10px;
+ border-radius: 3px;
+ /* Gives the button a bottom border with a width of 2px, type of solid, and a colour in RGBA format */
+ border-bottom: 2px solid rgba(0,0,0,0.3)
+}
+
+.sub-btn:hover, .sub-btn:focus {
+ /* Lets the mouse appear as a hand when hovering over the button */
+ cursor: pointer;
+ /* Reduces opacity of the button when cursor hovers over it */
+ opacity: 0.8;
+}
+
+.navigation-list_item--active {
+ text-decoration: none;
+}
+
+.profile {
+ max-width: 700px;
+ display: flex;
+ margin: 0 auto;
+ align-items: center;
+ padding-top: 20px;
+}
+
+.profile-portrait {
+ float: left;
+ width: 250px;
+ margin-right: 40px;
+ border-radius: 50%;
+}
+
+/* Would like to affix the social media logos
+to the base of the page directly */
+.page-footer {
+ clear: both;
+ display: flex;
+ text-align: center;
+ flex-direction: column;
+}
+
+.page-header {
+ display: flex;
+ width: 100%;
+ padding: 20px;
+}
+
+.page-header_item {
+ flex: 0 1 200px;
+}
+
+.page-header_item:last-child {
+ flex-grow: 1;
+ text-align: right;
+}
+
+.navigation-list {
+ list-style-type: none;
+}
+
+.navigation-list li {
+ display: inline;
+ margin-left: 15px;
+}
+
+.site-logo {
+ max-height: 100px;
+ max-width: 120px;
+ border-style: solid;
+ border-width: thin;
+}
+
+/* Grid Fallback */
+
+.grid-item {
+display: inline-block;
+width: 33%;
+}
+
+.example-image {
+ width: 400px;
+ height: 100px;
+}
+
+.project-link-list {
+ list-style-type: none;
+}
+
+/* Styling CSS grid */
+
+.grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+ grid-gap: 20px;
+ padding-left: 20px;
+ padding-right: 20px;
+}
+
+.grid-item {
+ border: thin solid black;
+ padding: 10px;
+ /* Set width to auto */
+ width: auto;
+}
+
+.grid-item:hover {
+ opacity: 0.75;
+ background-color: var(--work-hover);
+}
+
+.grid-item:last-child {
+ grid-column: 3/3;
+ grid-row: 1/3;
+}
+
+.grid-item h2 {
+text-align: center;
+}
+
+.h1-center {
+ text-align: center;
+}
+
+/* Contact Page */
+.contact-body {
+ max-width: 400px;
+ display: flex;
+ margin: 0 auto;
+ padding-top: 20px;
+}
+
+.contact-body_item {
+ padding: 20px;
+}
+
+.contact-form {
+ text-align: center;
+ padding: 20px;
+}
+
+/* About Page */
+.about-body {
+ margin: 0 auto;
+ max-width: 700px;
+ text-align: center;
+ border: medium solid black;
+ border-radius: 15px;
+}
+
+.food-table {
+ text-align: center;
+ padding-left: 150px;
+ padding-bottom: 20px;
+ padding-top: 20px;
+ border-top: thin dashed black;
+}
+
+.table-header_row {
+ text-decoration: underline;
+}
+
+.food-table_title {
+ font-size: 20px;
+}
+
+@media all and (max-width: 500px) {
+ .grid {
+   grid-template-columns: 1fr;
+ }
+}
+/* 501px is necessary as it does not reduce to 1 column if 500px is used */
+@media all and (min-width: 501px) and (max-width: 750px) {
+ .grid {
+   grid-template-columns: 1fr 1fr;
+ }
+}
+
+@media all and (max-width: 750px) {
+ .grid {
+   grid-gap: 10px;
+ }
+.grid-item:last-child {
+  grid-column: auto / auto;
+  grid-row: auto / auto;
+}
+h1 {
+ font-size: 22px;
+}
+}
+
+.button, button {
+ /* Overwrites browser defaults and resets the border */
+ border: none;
+ display: inline-block;
+ /* Takes the font from the outer container */
+ font-family: inherit;
+ /* Styles the button */
+ background-color: var(--button-color);
+ /* Text colour does not appear to be applied unless !important is added*/
+ color: white !important;
+ text-decoration: none;
+ padding: 10px;
+ border-radius: 10px;
+ /* Width of the border, type, colour */
+ border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+ transition: 1s opacity, 0.4s font-size;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+ /* Makes mouse appear when hovering over button */
+ cursor: pointer;
+ /* Reduces opacity of the button to 80% */
+ opacity: 0.8;
+ font-size: 18px;
+}
+
+@keyframes color-change {
+ from {
+   fill: var(--yellow-sun);
+ }
+ to {
+   fill: var(--red-sun);
+ }
+}
+
+.sun {
+ animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes sunray-rotate {
+ from {
+   transform: rotate(0deg);
+ }
+ to {
+   transform: rotate(360deg);
+ }
+}
+
+.sun-rays {
+ transform-origin: 403px 43.5px;
+ animation: 5s sunray-rotate infinite alternate linear;
+}
+
+/* Sun sets but in front of other images,
+Colour change animation also stops */
+/* @keyframes sun-down {
+ from {
+   transform: translate(0, 0);
+ }
+ to {
+ transform: translate(0, 200px);
+ }
+}
+
+.sun, .sun-rays {
+ animation: 30s sun-down infinite alternate linear;
+} */
+
+@keyframes cloud-move {
+ from {
+   transform: translate(0, 50px);
+ }
+ to {
+   transform: translate(200px, 50px);
+ }
+}
+
+.cloud-front {
+ animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+ from {
+   transform: translate(446px, 48px);
+ }
+ to {
+   transform: translate(100px, 48px);
+ }
+}
+
+.cloud-back {
+ animation: 34s cloud-move-reverse infinite alternate linear;
+}
