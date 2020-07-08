@@ -219,6 +219,10 @@ width: 33%;
 text-align: center;
 }
 
+.grid-item img {
+width: 100px;
+}
+
 .h1-center {
  text-align: center;
 }
