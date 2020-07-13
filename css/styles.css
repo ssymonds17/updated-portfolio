@@ -216,11 +216,12 @@ width: 33%;
 } */
 
 .grid-item h2 {
-text-align: center;
+ text-align: center;
 }
 
 .grid-item img {
-width: 100px;
+ align-content: center;
+ width: 350px;
 }
 
 .h1-center {
