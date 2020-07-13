@@ -219,10 +219,10 @@ width: 33%;
  text-align: center;
 }
 
-.grid-item img {
+/* .grid-item img {
  align-content: center;
- /* width: 350px; */
-}
+ width: 350px;
+} */
 
 .h1-center {
  text-align: center;
